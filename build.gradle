@@ -1,0 +1,29 @@
+group 'com.huqing.learning'
+version '1.0-SNAPSHOT'
+
+// 创建Java项目插件，提供了所有构建和测试Java程序所需项目结构
+apply plugin: 'java'
+// 引入Maven插件，以便Gradle可以引用Maven仓库的Jar包
+apply plugin: 'maven'
+// 进行打包插件
+apply plugin: 'war'
+// Web项目服务器插件,此处配置后，不需再单独配置Web服务器
+//apply plugin: 'jetty'
+// Web项目开发插件
+apply plugin: 'eclipse'
+
+
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile "javax.servlet:javax.servlet-api:3.1.0"
+}
+
+
